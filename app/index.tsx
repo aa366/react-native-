@@ -1,23 +1,23 @@
-import Greet from "@/components/Greet";
-import Lesson2 from "@/lessons/lesson2";
-import React from "react";
-import { ScrollView, Text, View } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Status from "@/components/Status";
+// import Lesson1 from "@/lessons/lesson1";
 
-const index = () => {
+import { useCounterStore } from "@/zustand/store";
+import { Link } from "expo-router";
+import React from "react";
+import { Text, View } from "react-native";
+
+const Index = () => {
+  const count = useCounterStore((state) => state.count);
   return (
-    <ScrollView horizontal>
-      <SafeAreaProvider>
-        <SafeAreaView>
-          <View className="">
-            <Text>hello abdelwahab </Text>
-            <Greet />
-            <Lesson2 />
-          </View>
-        </SafeAreaView>
-      </SafeAreaProvider>
-    </ScrollView>
+    <>
+      <View>
+        <Text style={{ marginHorizontal: "auto" }}>hello abdelwahab </Text>
+        <Status />
+        <Link href={"/lesson1"}> lesson 1 </Link>
+        <Link href={"/lesson2"}> lesson 2</Link>
+      </View>
+    </>
   );
 };
 
-export default index;
+export default Index;

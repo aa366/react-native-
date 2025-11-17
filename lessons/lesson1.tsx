@@ -13,13 +13,14 @@ function Card() {
         alignItems: "center",
         gap: "10",
         alignSelf: "center",
-        width: "100%",
         padding: 12,
-        position: "relative",
-        right: "-50%",
-        transform: "translateX(-50%)",
-        marginVertical: 20,
-        boxShadow: "2px 2px 2px 2px ",
+        borderWidth: 1,
+        borderRadius: 15,
+        // elevation: 2,
+        // shadowColor: "#000",
+        // shadowOffset: { width: 0, height: 2 },
+        // shadowOpacity: 5,
+        // shadowRadius: 3.84,
       }}
     >
       <Text>Text</Text>
@@ -56,6 +57,8 @@ const lesson1 = () => {
   }
   return (
     <View>
+      <Card />
+
       <View>
         {lesson1.map((d, i) => {
           return (
@@ -86,11 +89,9 @@ const lesson1 = () => {
         <Text style={{ color: "teal" }}>pressable image</Text>
         <MyImage
           source={require("@/assets/image1.png")}
-          style={{ width: "50%", height: "50%" }}
+          style={{ width: "100%", objectFit: "contain", height: 350 }}
         />
       </Pressable>
-
-      <Card />
     </View>
   );
 };

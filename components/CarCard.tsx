@@ -61,6 +61,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 5,
+
+    borderWidth: 1,
+    borderRadius: 15,
+    // elevation: 1,
+    padding: 10,
   },
   cont: {
     width: "100%",
